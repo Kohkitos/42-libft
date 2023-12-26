@@ -6,7 +6,7 @@
 #    By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 13:06:42 by fsanz-go          #+#    #+#              #
-#    Updated: 2023/12/26 13:27:31 by fsanz-go         ###   ########.fr        #
+#    Updated: 2023/12/26 13:28:16 by fsanz-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,8 @@ OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
 RM = rm -rf
 
 # RULES
+
+.PHONY: all re clean fclean
 
 all: $(NAME)
 
