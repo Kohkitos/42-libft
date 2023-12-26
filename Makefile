@@ -6,7 +6,7 @@
 #    By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 13:06:42 by fsanz-go          #+#    #+#              #
-#    Updated: 2023/12/26 13:22:48 by fsanz-go         ###   ########.fr        #
+#    Updated: 2023/12/26 13:25:07 by fsanz-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ $(NAME): $(OBJ)
 		$(AR) $(NAME) $(OBJ)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
-		$(CC) $(CFLAGS)
+		$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ): | $(OBJ_PATH)
 
