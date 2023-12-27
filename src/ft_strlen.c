@@ -6,7 +6,7 @@
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 11:46:48 by fsanz-go          #+#    #+#             */
-/*   Updated: 2023/12/27 11:55:43 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:57:57 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,5 @@ size_t	ft_strlen(const char *s)
 		s++;
 		count++;
 	}
-
 	return (count);
 }
