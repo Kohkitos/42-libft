@@ -6,7 +6,7 @@
 #    By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 13:06:42 by fsanz-go          #+#    #+#              #
-#    Updated: 2023/12/27 12:07:25 by fsanz-go         ###   ########.fr        #
+#    Updated: 2023/12/27 12:36:54 by fsanz-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ SRC = ft_isalpha.c \
 		ft_isprint.c \
 		ft_strlen.c \
 		ft_toupper.c \
-		ft_tolower.c
+		ft_tolower.c \
+		ft_atoi
 
 OBJ_NAME = $(SRC:%.c=%.o)
 

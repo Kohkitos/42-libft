@@ -1,28 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 13:30:03 by fsanz-go          #+#    #+#             */
-/*   Updated: 2023/12/27 12:36:45 by fsanz-go         ###   ########.fr       */
+/*   Created: 2023/12/27 12:10:01 by fsanz-go          #+#    #+#             */
+/*   Updated: 2023/12/27 12:36:58 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+static int	is_space(int c)
+{
+	if (((c >= 9) && (c <= 13)) || (c == 32))
+		return (1);
+	return (0);
+}
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_atoi(const char *nptr);
+int	ft_atoi(const char *nptr)
+{
+	int	res;
+	int	flag;
 
-#endif
+	res = 0;
+	flag = 0;
+	while (is_space(*nptr))
+		nptr++;
+	if (*nptr == '-')
+	{
+		flag = 1;
+		nptr++;
+	}
+	while (ft_isdigit(*nptr))
+	{
+		res *= 10;
+		res += (*nptr - '0');
+		nptr++;
+	}
+	if (flag)
+		res *= -1;
+	return (res);
+}
