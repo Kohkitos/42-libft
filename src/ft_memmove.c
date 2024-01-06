@@ -6,7 +6,7 @@
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 20:13:53 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/06 20:59:24 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/06 21:00:51 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*s_cpy;
 	size_t			i;
 
-	d_cpy = (unsigned char	*)dest;
-	s_cpy = (unsigned char	*)src;
+	d_cpy = (unsigned char *)dest;
+	s_cpy = (unsigned char *)src;
 	if (s_cpy == 0 && d_cpy == 0)
 		return ("");
 	if (dest > src)
