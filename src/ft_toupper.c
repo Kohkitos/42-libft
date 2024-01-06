@@ -6,11 +6,13 @@
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 11:59:22 by fsanz-go          #+#    #+#             */
-/*   Updated: 2023/12/27 12:04:56 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:48:05 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	return (c - ('a' - 'A'));
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }

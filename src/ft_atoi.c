@@ -6,7 +6,7 @@
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:10:01 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/06 18:25:04 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:50:41 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ int	ft_atoi(const char *nptr)
 	flag = 0;
 	while (is_space(*nptr))
 		nptr++;
-	if (*nptr == '-')
+	if ((*nptr == '-') || (*nptr == '+'))
 	{
-		flag = 1;
+		if (*nptr == '-')
+			flag = 1;
 		nptr++;
 	}
 	while (ft_isdigit(*nptr))
