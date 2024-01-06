@@ -6,11 +6,11 @@
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:10:01 by fsanz-go          #+#    #+#             */
-/*   Updated: 2023/12/27 12:36:58 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:25:04 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 static int	is_space(int c)
 {

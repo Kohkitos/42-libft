@@ -6,11 +6,11 @@
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 11:46:48 by fsanz-go          #+#    #+#             */
-/*   Updated: 2023/12/27 11:57:57 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:24:42 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 size_t	ft_strlen(const char *s)
 {
