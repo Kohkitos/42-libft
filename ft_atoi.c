@@ -1,20 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 12:51:23 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/06 18:25:00 by fsanz-go         ###   ########.fr       */
+/*   Created: 2023/12/27 12:10:01 by fsanz-go          #+#    #+#             */
+/*   Updated: 2024/01/07 19:12:42 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-int	ft_isalnum(int c)
+static int	is_space(int c)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
+	if (((c >= 9) && (c <= 13)) || (c == 32))
 		return (1);
 	return (0);
+}
+
+int	ft_atoi(const char *nptr)
+{
+	int	res;
+	int	flag;
+
+	res = 0;
+	flag = 0;
+	while (is_space(*nptr))
+		nptr++;
+	if ((*nptr == '-') || (*nptr == '+'))
+	{
+		if (*nptr == '-')
+			flag = 1;
+		nptr++;
+	}
+	while (ft_isdigit(*nptr))
+	{
+		res *= 10;
+		res += (*nptr - '0');
+		nptr++;
+	}
+	if (flag)
+		res *= -1;
+	return (res);
 }

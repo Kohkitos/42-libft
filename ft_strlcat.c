@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/07 15:12:01 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/07 15:24:06 by fsanz-go         ###   ########.fr       */
+/*   Created: 2024/01/07 12:47:40 by fsanz-go          #+#    #+#             */
+/*   Updated: 2024/01/07 19:13:16 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t			i;
-	unsigned char	*cpy;
+	size_t	i;
+	size_t	r;
+	size_t	size_d;
+	size_t	size_s;
 
-	cpy = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	size_s = ft_strlen(src);
+	size_d = ft_strlen(dst);
+	if (size <= size_d)
+		return (size_s + size);
+	i = size_d;
+	r = size_d + size_s;
+	while ((i < (size - 1)) && (*src))
 	{
-		if (*(cpy + i) == (unsigned char)c)
-			return ((void *)(s + i));
+		*(dst + i) = *src;
+		src++;
 		i++;
 	}
-	return (NULL);
+	*(dst + i) = '\0';
+	return (r);
 }

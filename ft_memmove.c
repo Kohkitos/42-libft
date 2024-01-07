@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/07 12:47:40 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/07 13:48:06 by fsanz-go         ###   ########.fr       */
+/*   Created: 2024/01/06 20:13:53 by fsanz-go          #+#    #+#             */
+/*   Updated: 2024/01/07 19:13:16 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	size_t	r;
-	size_t	size_d;
-	size_t	size_s;
+	unsigned char	*d_cpy;
+	unsigned char	*s_cpy;
+	size_t			i;
 
-	size_s = ft_strlen(src);
-	size_d = ft_strlen(dst);
-	if (size <= size_d)
-		return (size_s + size);
-	i = size_d;
-	r = size_d + size_s;
-	while ((i < (size - 1)) && (*src))
+	d_cpy = (unsigned char *)dest;
+	s_cpy = (unsigned char *)src;
+	if (dest > src)
 	{
-		*(dst + i) = *src;
-		src++;
-		i++;
+		while (n--)
+			d_cpy[n] = s_cpy[n];
 	}
-	*(dst + i) = '\0';
-	return (r);
+	else if (dest <= src)
+	{
+		i = 0;
+		while (i < n)
+		{
+			d_cpy[i] = s_cpy[i];
+			i++;
+		}
+	}
+	return (dest);
 }

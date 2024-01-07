@@ -4,8 +4,9 @@
 This project, **Libft**, is a custom C library containing re-implementations of various standard C functions. Created as part of the 42 curriculum, it serves as a foundational learning exercise in programming and the C language.
 
 ## Project Structure
-- **`inc/`:** Contains the header file `libft.h`, providing function prototypes and declarations.
-- **`src/`:** Includes all the `.c` files comprising the implementations of the custom library functions.
+Every file is on root by demand, which is quite disgusgting to see for a person with OCD like me, so here's the contents you can see.
+- **`libft.h`:** Header file, provides function prototypes and declarations.
+- **`*.c*`:** Implementations of the custom library functions.
 - **`Makefile`:** A build automation script facilitating compilation and project management.
 - **`README.md`:** This file, offering a brief overview of the project.
 

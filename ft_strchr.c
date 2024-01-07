@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 19:23:35 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/06 20:11:18 by fsanz-go         ###   ########.fr       */
+/*   Created: 2024/01/07 13:53:09 by fsanz-go          #+#    #+#             */
+/*   Updated: 2024/01/07 19:13:16 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*cpy;
+	char			*cpy;
+	unsigned char	ch;
 
-	if (!size)
-		return (ft_strlen(src));
-	cpy = (char *)src;
-	while ((size > 1) && (*cpy))
-	{
-		*dst = *cpy;
-		dst++;
+	ch = (unsigned char)c;
+	cpy = (char *)s;
+	while ((*cpy != ch) && *cpy)
 		cpy++;
-		size--;
-	}
-	if (*dst)
-		*dst = 0;
-	return (ft_strlen(src));
+	if (ch == *cpy)
+		return (cpy);
+	return (NULL);
 }

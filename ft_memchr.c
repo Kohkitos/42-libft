@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/07 18:22:05 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/07 18:48:06 by fsanz-go         ###   ########.fr       */
+/*   Created: 2024/01/07 15:12:01 by fsanz-go          #+#    #+#             */
+/*   Updated: 2024/01/07 19:13:16 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	size_t	j;
+	size_t			i;
+	unsigned char	*cpy;
 
-	if (!*little)
-		return ((char *)big);
+	cpy = (unsigned char *)s;
 	i = 0;
-	while ((i < len) && (big[i]))
+	while (i < n)
 	{
-		j = 0;
-		while ((big[i + j] == little[j]) && (i + j < len)
-			&& big[i + j] && little[j])
-			j++;
-		if (!little[j])
-			return ((char *)(big + i));
+		if (*(cpy + i) == (unsigned char)c)
+			return ((void *)(s + i));
 		i++;
 	}
 	return (NULL);
