@@ -6,7 +6,7 @@
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 13:30:03 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/07 15:13:07 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/07 15:28:32 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif
