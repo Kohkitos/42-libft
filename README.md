@@ -6,7 +6,7 @@ This project, **Libft**, is a custom C library containing re-implementations of 
 ## Project Structure
 Every file is on root by demand, which is quite disgusgting to see for a person with OCD like me, so here's the contents you can see.
 - **`libft.h`:** Header file, provides function prototypes and declarations.
-- **`*.c*`:** Implementations of the custom library functions.
+- **`*.c`:** Implementations of the custom library functions.
 - **`Makefile`:** A build automation script facilitating compilation and project management.
 - **`README.md`:** This file, offering a brief overview of the project.
 
