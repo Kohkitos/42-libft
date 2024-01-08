@@ -6,20 +6,20 @@
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 12:40:23 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/08 21:53:01 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/08 21:55:59 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	start_end(char const *s1, char const *set, size_t i, size_t end)
+static size_t	start_end(char const *s1, char const *set, size_t i, size_t j)
 {
 	size_t	res;
 	size_t	set_len;
 
 	res = 0;
 	set_len = ft_strlen(set);
-	while (i < end)
+	while (i < j)
 	{
 		if (ft_strnstr(set, ft_substr(s1, i, 1), set_len))
 			res++;
