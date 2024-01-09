@@ -3,23 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsanz-go <fsanz-go@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:11:22 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/09 18:10:35 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/09 22:49:35 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**free_all(char **arr, size_t i)
+static char	**free_all(char **res, size_t i)
 {
-	while (i > 0)
-	{
-		i--;
-		free(arr[i]);
-	}
-	free(arr);
+	while (--i)
+		free(res[i]);
+	free(res);
 	return (NULL);
 }
 
@@ -60,7 +57,7 @@ static char	**assemble(char **res, char const *s, char c, size_t n)
 		if (j)
 		{
 			res[i] = ft_substr(s, 0, j);
-			if (!res)
+			if (!res[i])
 				return (free_all(res, i));
 		}
 		s += j;
@@ -75,10 +72,10 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 	size_t	n;
 
-	if (!s)
-		return (NULL);
+	if (!s || !*s)
+		return ((char **)ft_calloc(sizeof(char *), 1));
 	n = string_n(s, c);
-	res = malloc(sizeof(char *) * (n + 1));
+	res = ft_calloc(sizeof(char *), (n + 1));
 	if (!res)
 		return (NULL);
 	return (assemble(res, s, c, n));
