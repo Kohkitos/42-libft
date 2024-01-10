@@ -6,11 +6,22 @@
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 09:29:26 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/10 10:48:45 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/10 10:55:59 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	*excepts(int n)
+{
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	if (n == INT_MAX)
+		return (ft_strdup("2147483647"));
+	if (n == 0)
+		return (ft_strdup("0"));
+	return (NULL);
+}
 
 static size_t	n_digits(int n)
 {
@@ -42,10 +53,8 @@ char	*ft_itoa(int n)
 	size_t	len;
 	size_t	cpy;
 
-	if (n == INT_MIN)
-		return (ft_strdup("-2147483648"));
-	if (n == 0)
-		return (ft_strdup("0"));
+	if (n == 0 || n == INT_MIN || n == INT_MAX)
+		return (excepts(n));
 	cpy = n;
 	len = n_digits(n);
 	res = ft_calloc(sizeof(char), len + 1);
