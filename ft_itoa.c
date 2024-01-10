@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: fsanz-go <fsanz-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 09:29:26 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/10 09:59:47 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/10 10:25:00 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	r_power(int n, size_t pwr)
+{
+	int	res;
+
+	if (pwr < 0)
+		return (0);
+	else if (pwr == 0)
+		return (1);
+	res = 1;
+	if (pwr > 0)
+		res *= n * r_power(n, pwr - 1);
+	return (res);
+}
 
 static size_t	n_digits(int n)
 {
@@ -24,6 +38,7 @@ static size_t	n_digits(int n)
 	if (n < 0)
 		n *= -1;
 	cpy = n;
+	len = 0;
 	while (cpy > 0)
 	{
 		cpy /= 10;
@@ -39,23 +54,20 @@ char	*ft_itoa(int n)
 	size_t	cpy;
 	size_t	i;
 
-	l = n_digits(n);
+	len = n_digits(n);
 	if (n < 0)
-	{
-		l++;
 		cpy = -n;
-	}
-	res = ft_calloc(sizeof(char), l + 1);
+	res = ft_calloc(sizeof(char), len + 1);
 	if (!res)
 		return (NULL);
 	i = 0;
 	if (n < 0)
 		res[i++] = '-';
-	while (l > 0)
+	while (len > 0)
 	{
-		res[i++] = (cpy / (10 ** l)) + 48;
-		cpy %= (10 ** l);
-		l--; 
+		res[i++] = (cpy / r_power(10, len - 1)) + 48;
+		cpy %= r_power(10, len);
+		len--;
 	}
 	res[i] = '\0';
 	return (res);
