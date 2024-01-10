@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: fsanz-go <fsanz-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 20:13:53 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/07 19:13:16 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/10 13:41:20 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d_cpy = (unsigned char *)dest;
 	s_cpy = (unsigned char *)src;
+	if (!dest && !src)
+		return (NULL);
 	if (dest > src)
 	{
 		while (n--)
 			d_cpy[n] = s_cpy[n];
 	}
-	else if (dest <= src)
+	else
 	{
 		i = 0;
 		while (i < n)
