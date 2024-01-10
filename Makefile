@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+         #
+#    By: fsanz-go <fsanz-go@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 13:06:42 by fsanz-go          #+#    #+#              #
-#    Updated: 2024/01/10 11:06:35 by fsanz-go         ###   ########.fr        #
+#    Updated: 2024/01/10 12:13:32 by fsanz-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,8 @@ SRC = ft_isalpha.c \
 		ft_strtrim.c \
 		ft_split.c \
 		ft_itoa.c \
-		ft_strmapi.c
+		ft_strmapi.c \
+		ft_striteri.c
 
 OBJ_NAME = $(SRC:%.c=%.o)
 
