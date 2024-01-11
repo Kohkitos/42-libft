@@ -6,7 +6,7 @@
 /*   By: fsanz-go <fsanz-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 13:30:03 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/10 13:27:49 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:20:52 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <limits.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
