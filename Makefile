@@ -6,7 +6,7 @@
 #    By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 13:06:42 by fsanz-go          #+#    #+#              #
-#    Updated: 2024/01/12 12:57:14 by fsanz-go         ###   ########.fr        #
+#    Updated: 2024/01/12 16:07:31 by fsanz-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,10 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 AR = ar -rc
+
+# INCLUDE
+
+INCLUDE = libft.h
 
 # PATH
 
@@ -86,15 +90,15 @@ RM = rm -rf
 
 # RULES
 
-.PHONY: all re clean fclean
+.PHONY: all re clean fclean bonus
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(INCLUDE)
 		$(AR) $(NAME) $(OBJ)
 
-bonus: $(B_OBJ) $(NAME)
-		$(AR) $(NAME) $(B_OBJ)
+bonus: $(OBJ) $(B_OBJ) $(INCLUDE)
+		$(AR) $(NAME) $(B_OBJ) $(OBJ)
 
 $(OBJ_PATH)/%.o: %.c
 		$(CC) $(CFLAGS) -c $< -o $@
