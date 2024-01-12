@@ -6,7 +6,7 @@
 #    By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 13:06:42 by fsanz-go          #+#    #+#              #
-#    Updated: 2024/01/12 09:51:05 by fsanz-go         ###   ########.fr        #
+#    Updated: 2024/01/12 10:01:19 by fsanz-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,8 @@ SRC = ft_isalpha.c \
 
 BONUS = ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
-		ft_lstsize_bonus.c
+		ft_lstsize_bonus.c \
+		ft_lstlast_bonus.c
 
 OBJ_NAME = $(SRC:%.c=%.o)
 
