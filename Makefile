@@ -6,7 +6,7 @@
 #    By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 13:06:42 by fsanz-go          #+#    #+#              #
-#    Updated: 2024/01/12 16:07:31 by fsanz-go         ###   ########.fr        #
+#    Updated: 2024/01/12 16:13:34 by fsanz-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,6 @@ AR = ar -rc
 # INCLUDE
 
 INCLUDE = libft.h
-
-# PATH
-
-OBJ_PATH = obj/
 
 # SOURCES
 
@@ -76,13 +72,9 @@ BONUS = ft_lstnew_bonus.c \
 		ft_lstiter_bonus.c \
 		ft_lstmap_bonus.c
 
-OBJ_NAME = $(SRC:%.c=%.o)
+OBJ = $(SRC:%.c=%.o)
 
-OBJ_BONUS = $(BONUS:%.c=%.o)
-
-OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
-
-B_OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_BONUS))
+B_OBJ = $(BONUS:%.c=%.o)
 
 # RM
 
@@ -100,18 +92,11 @@ $(NAME): $(OBJ) $(INCLUDE)
 bonus: $(OBJ) $(B_OBJ) $(INCLUDE)
 		$(AR) $(NAME) $(B_OBJ) $(OBJ)
 
-$(OBJ_PATH)/%.o: %.c
+%.o: %.c
 		$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJ): | $(OBJ_PATH)
-
-$(B_OBJ): | $(OBJ_PATH)
-
-$(OBJ_PATH):
-		mkdir -p $(OBJ_PATH)
-
 clean:
-	$(RM) $(OBJ_PATH)
+	$(RM) $(OBJ) $(B_OBJ)
 
 fclean:	clean
 	$(RM) $(NAME)
