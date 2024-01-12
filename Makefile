@@ -6,7 +6,7 @@
 #    By: fsanz-go <fsanz-go@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 13:06:42 by fsanz-go          #+#    #+#              #
-#    Updated: 2024/01/10 13:27:45 by fsanz-go         ###   ########.fr        #
+#    Updated: 2024/01/11 18:01:36 by fsanz-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,9 +62,15 @@ SRC = ft_isalpha.c \
 		ft_putnbr_fd.c \
 		ft_putendl_fd.c
 
+BONUS =
+
 OBJ_NAME = $(SRC:%.c=%.o)
 
+OBJ_BONUS = $(BONUS:%.c=%.o)
+
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
+
+B_OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_BONUS))
 
 # RM
 
@@ -78,6 +84,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 		$(AR) $(NAME) $(OBJ)
+
+bonus: $(B_OBJ) $(NAME)
+		$(AR) $(NAME) $(B_OBJ)
 
 $(OBJ_PATH)/%.o: %.c
 		$(CC) $(CFLAGS) -c $< -o $@
