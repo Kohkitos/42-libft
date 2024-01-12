@@ -6,7 +6,7 @@
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 10:44:21 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/12 12:38:28 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/12 12:51:20 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstclear(&res, del);
 		return (NULL);
 	}
-	res -> next = NULL;
 	lst = lst -> next;
 	while (lst)
 	{
