@@ -6,7 +6,7 @@
 #    By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 13:06:42 by fsanz-go          #+#    #+#              #
-#    Updated: 2024/01/12 10:43:09 by fsanz-go         ###   ########.fr        #
+#    Updated: 2024/01/12 10:45:21 by fsanz-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,8 @@ BONUS = ft_lstnew_bonus.c \
 		ft_lstadd_back_bonus.c \
 		ft_lstdelone_bonus.c \
 		ft_lstclear_bonus.c \
-		ft_lstiter_bonus.c
+		ft_lstiter_bonus.c \
+		ft_lstmap_bonus.c
 
 OBJ_NAME = $(SRC:%.c=%.o)
 
