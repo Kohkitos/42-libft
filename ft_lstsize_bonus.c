@@ -6,7 +6,7 @@
 /*   By: fsanz-go <fsanz-go@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:51:17 by fsanz-go          #+#    #+#             */
-/*   Updated: 2024/01/12 09:56:25 by fsanz-go         ###   ########.fr       */
+/*   Updated: 2024/01/12 10:10:48 by fsanz-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 int	ft_lstsize(t_list *lst)
 {
 	int		len;
-	t_list	*pointer;
+	t_list	*ptr;
 
 	if (!lst)
 		return (0);
 	len = 0;
-	pointer = lst;
-	while (pointer)
+	ptr = lst;
+	while (ptr)
 	{
-		pointer = pointer -> next;
+		ptr = ptr -> next;
 		len++;
 	}
 	return (len);
